@@ -18,7 +18,19 @@
 	<input type="submit" name="add" value="Добавить">	
 
 	</form>
+	<?php
 	
+	include("init.php");
+$date=date("d.m.y");
+
+	$title = strip_tags(trim($_POST['title']));
+	$description = strip_tags(trim($_POST['description']));
+	$date_added = ($_POST['date_added']);
+	$time = ($_POST['time']);
+
+	mysqli_query($connection,"INSERT INTO ads(title, description, date_added, time) VALUES ('$title', '$description', '$date_added', '$time')");
+	
+	?>
 
 
 
